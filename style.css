@@ -1,18 +1,24 @@
 body{
-    background-color: rgb(149, 149, 158);
+    /* background-color: rgb(149, 149, 158); */
     height: 100vh;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url(images/1.jpg);
+    /* background-color: #333;  */
+    background-image: url();
     backdrop-filter: blur(3px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
     -webkit-backdrop-filter: blur(3px);
+    background-attachment: fixed;
+    position: relative;
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/2.jpg');
 }
-
+*{
+    color: white;
+}
 .mainContainer{
     /* background-color: rgb(185, 184, 184); */
     width: 40%;
@@ -27,7 +33,7 @@ body{
     width: 80%;
     margin: 0 auto;
     background-color: transparent;
-    border: .1px solid;
+    border: none;
     border-radius: 11px;
     text-align: center;
     outline: none;
@@ -58,48 +64,58 @@ line-height: .5;
 margin: 12px auto 0 auto;
 width:100%;
 font-size: 16px;
-/* background-color: rgb(147, 137, 158); */
-overflow: scroll;
-
 }
 .paraWithIcon{
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    margin: 2px 0;
+    background: linear-gradient(45deg, rgb(78, 78, 78), transparent);
+    top: bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100% ;
 }
 ::-webkit-scrollbar{
 display: none;
 }
-.allLists p{
-    padding: 0 0 0 50px;
+.paraWithIcon p{
+    padding: 7px 0 7px 50px;
 font-size: 17px;
+/* background-color: rgba(0, 0, 0, 0.4); */
+width: 100%;
+color: white;
+    margin: -1px;
+    border-bottom: 1px solid #b1035b;
 }
-.paraWithIcon{
- 
+.paraWithIcon p span:nth-child(2){
+    position: absolute;
+    left: 20px;
+    cursor: pointer;
+    transition: 1s ease-in-out;
 }
-.rightIcon{
-    padding: 0 3px;
-    margin-right: 4px;
-}
-.rightIcon img{
-    width: 17px;
+.paraWithIcon p span:nth-child(1){
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    padding: 0px 7px 1px 7px;
+    font-size: 25px;
+    color: #c30707;
+    font-weight: 550;
+    z-index: 9999999;
 }
 .showErr{
     position: absolute;
     width: 100%;
     top: 50%;
     transition: 1s ease-in-out;
+    z-index: 0;
 }
 .showErr p{
   text-align: center;
   font-size: 20px;
   color: rgb(255, 0, 0);
 }
-
-
+.checked{
+ text-decoration:line-through;
+ background-color: green;
+}
+input::placeholder, textarea::placeholder {
+    color: #d1a1a1;
+}
 
 
 
@@ -108,5 +124,37 @@ font-size: 17px;
 @media(max-width:1000px){
     .mainContainer{
         width: 85%;
+    }
+    .paraWithIcon p span:nth-child(1){
+        right: 1px;
+    }
+    .paraWithIcon p{
+        padding: 7px 0 7px 50px;
+        line-height: 1;
+    }
+}
+@media(max-width:600px){
+    .paraWithIcon p{
+        padding: 7px 0 7px 27px;
+        width: 85%;
+        border-right: none;
+        border-left: none;
+    }
+    .paraWithIcon p span:nth-child(2) {
+        left: 3px;
+        
+    }
+    .paraWithIcon p span:nth-child(1) {
+        right: 7px;
+        padding:0;
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: -6px;
+    }
+    
+}
+@media(max-width:321px){
+    .paraWithIcon p{
+        width: 73%;
     }
 }
